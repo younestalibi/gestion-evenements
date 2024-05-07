@@ -1,0 +1,43 @@
+/* Reset button to basic styles */
+.button-avatar {
+    background-color: transparent; /* Remove background color */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    color: inherit; /* Inherit text color */
+    font: inherit; /* Inherit font */
+    line-height: inherit; /* Inherit line-height */
+    text-align: inherit; /* Inherit text alignment */
+    text-decoration: none; /* Remove text decoration */
+    cursor: pointer; /* Keep the cursor as pointer */
+    display: inline-block; /* Ensure button is inline-block */
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.avatar img{
+    width:45px !important;
+    border-radius:50%;
+    height:45px !important;
+    object-fit:cover;
+}
+.dropdown-item .avatar img{
+    margin-right:15px
+}
+.dropdown-avatar{
+    margin-left: auto;
+    width: 50%;
+}
+.dropdown-toggle::after{
+    border:0px
+}
+.single-amenities{
+    height:100%;
+}
+.single-amenities .img-fluid{
+    height:220px;
+    object-fit:cover;
+    width:100%;
+}
