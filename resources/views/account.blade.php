@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-2">
-                                    <button type="button" class="btnSaveProfileDetails btn btn-primary me-2">Save
+                                    <button type="button" class="btnSaveProfileDetails btn btn-warning me-2">Save
                                         changes</button>
                                     <button type="reset" class="btn btn-outline-secondary">Cancel</button>
                                 </div>
@@ -166,7 +166,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary d-grid">Update Password</button>
+                                <button type="submit" class="btn btn-warning d-grid">Update Password</button>
                             </form>
                         </div>
                     </div>
