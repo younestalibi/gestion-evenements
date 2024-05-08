@@ -6,7 +6,7 @@
         <div class="row align-items-end justify-content-center text-center">
             <div class="col-lg-5">
                 <div class="main_title">
-                    <h1>Benifits Get <br>Our Customers</h1>
+                    <h1>Suggested Tours<br>For you</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
                         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                 </div>
@@ -25,7 +25,7 @@
                         <div class="amenities-meta">
                             <span>Within a Shor Time </span>
                         </div>
-                        <h5><a href="">{{$suggestion->name}}</a></h5>
+                        <h5><span >{{$suggestion->name}}</span></h5>
                         <p>{{Str::limit($suggestion->description, $limit = 200, $end = '...')}}</p>
                     </div>
                 </div>

@@ -3,7 +3,7 @@
 <!--================ Start banner section =================-->
 <section class="home-banner-area relative">
     <div class="container-fluid">
-        <div class="row d-flex align-items-center justify-content-center">
+        <div class="row d-flex align-items-center justify-content-center mb-4">
             <div class="header-right col-lg-6 col-md-6">
                 <h1>
                     About <br>

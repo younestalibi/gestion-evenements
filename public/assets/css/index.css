@@ -41,3 +41,6 @@
     object-fit:cover;
     width:100%;
 }
+.dropdown-menu-end{
+    width:220px !important;
+}

@@ -1,85 +1,61 @@
-@extends('layouts.app')
-
-
-@section('title')
-Login Page
-@endsection
-
-@section('styles')
-<link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}" />
-<style>
-    .divider:after,
-    .divider:before {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
-    }
-</style>
-@endsection
-
+@extends('layouts.auth')
 @section('content')
 
-<section class="vh-100">
-    <div class="container py-5 h-100">
-        <div class="row d-flex align-items-center justify-content-center h-100">
-            <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="{{asset('assets/morocco.png')}}" class="img-fluid" alt="handyman image">
-                <div class="text-center">
-                    <p>Welcome to MoroccoInYourHand!</p>
-                    <p>Your ultimate guide to discovering the wonders of Morocco</p>
-                    <p>Explore breathtaking destinations, plan your trip with precision, and enjoy</p>
-                    <p>major events.</p>
-                    <p>Create an account today and start exploring!</p>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="img" style="background-image: url({{asset('newAssets/img/pac1.jpg')}});">
+                    </div>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign In</h3>
+                            </div>
+                        </div>
+                        <form class="signin-form" action="{{ route('login') }}" method="POST">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">Email or
+                                    Username</label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email .." autofocus value="{{ old('email') }}" />
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                        <input type="checkbox" checked name="remember" />
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+
+                            </div>
+                        </form>
+                        <p class="text-center">Not a member? <a  href="{{ route('register') }}">Sign Up</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form id="formAuthentication" action="{{ route('login') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email or
-                            Username</label>
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="Enter your email .." autofocus value="{{ old('email') }}" />
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="mb-3 form-password-toggle">
-                        <div class="d-flex justify-content-between">
-                            <label class="form-label" for="password">Password</label>
-
-                        </div>
-                        <div class="input-group input-group-merge">
-                            <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
-                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember" />
-                            <label class="form-check-label" for="remember-me"> Remember Me </label>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
-                    </div>
-                </form>
-
-                <p class="text-center">
-                    <span>New on our platform?</span>
-                    <a href="{{ route('register') }}">
-                        <span>Create an account</span>
-                    </a>
-                </p>
             </div>
         </div>
     </div>
 </section>
+
+
 @endsection

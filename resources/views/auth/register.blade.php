@@ -1,110 +1,98 @@
-@extends('layouts.app')
-
-
-@section('title')
-Register Page
-@endsection
-
-@section('styles')
-<link rel="stylesheet" href="{{ asset('assets/vendor/css/pages/page-auth.css') }}" />
-<style>
-    .divider:after,
-    .divider:before {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
-    }
-</style>
-@endsection
-
+@extends('layouts.auth')
 @section('content')
 
-
-<section class="vh-100">
-    <div class="container py-5 h-100">
-        <div class="row d-flex align-items-center justify-content-center h-100">
-            <div class="col-md-8 col-lg-7 col-xl-6">
-                <img src="{{asset('assets/morocco.png')}}" class="img-fluid" alt="car image">
-            </div>
-            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-                <form id="formAuthentication" class="mb-3" action="{{ route('register') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Enter your name">
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="img" style="background-image: url({{asset('newAssets/img/pac1.jpg')}});">
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Enter your email" />
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="role" class="form-label">User Type</label>
-                        <select id="role" name="role" class="form-control @error('role') is-invalid @enderror">
-                            <option value="" >--Select user type--</option>
-                            <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
-                            <option value="Partner" {{ old('role') == 'Partner' ? 'selected' : '' }}>Partner</option>
-                        </select>
-                        @error('role')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col form-password-toggle">
-                            <label class="form-label" for="password">Password</label>
-                            <div class="input-group input-group-merge">
-                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password') }}" />
-                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign Up</h3>
                             </div>
                         </div>
-                        <div class="col form-password-toggle">
-                            <label class="form-label" for="password">password confirm</label>
-                            <div class="input-group input-group-merge">
-                                <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password_confirmation') }}" />
-                                <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        <form class="signin-form" action="{{ route('register') }}" method="POST">
+                            @csrf
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus placeholder="Enter your name">
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-                        </div>
-                        <div class="col-12 mt-1 text-center">
-                            @error('password')
-                            <span class="text-danger" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input  @error('terms') is-invalid @enderror " type="checkbox" id="terms" name="terms" />
-                            <label class="form-check-label" for="terms">
-                                I agree to
-                                <a href="javascript:void(0);">privacy policy & terms</a>
-                            </label>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary d-grid w-100">Sign up</button>
-                </form>
+                            <div class="form-group mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" placeholder="Enter your email" />
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="role" class="form-label">User Type</label>
+                                <select id="role" name="role" class="form-control @error('role') is-invalid @enderror">
+                                    <option value="">--Select user type--</option>
+                                    <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
+                                    <option value="Partner" {{ old('role') == 'Partner' ? 'selected' : '' }}>Partner</option>
+                                </select>
+                                @error('role')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
 
-                <p class="text-center">
-                    <span>Already have an account?</span>
-                    <a href="{{ route('login') }}">
-                        <span>Sign in instead</span>
-                    </a>
-                </p>
+                            <div class="row form-group mb-3">
+                                <div class="col form-password-toggle">
+                                    <label class="form-label" for="password">Password</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password') }}" />
+                                    </div>
+                                </div>
+                                <div class="col form-password-toggle">
+                                    <label class="form-label" for="password">password confirm</label>
+                                    <div class="input-group input-group-merge">
+                                        <input id="password-confirm" type="password" class="form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" value="{{ old('password_confirmation') }}" />
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-1 text-center">
+                                    @error('password')
+                                    <span class="text-danger" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <label class="checkbox-wrap checkbox-primary mb-0">I agree to
+                                        <a href="javascript:void(0);">privacy policy & terms</a>
+                                        <input checked class="form-check-input  @error('terms') is-invalid @enderror " type="checkbox" id="terms" name="terms" />
+                                        <span class="checkmark"></span>
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Up</button>
+                            </div>
+
+                        </form>
+                        <p class="text-center">Already a member? <a href="{{ route('login') }}">Sign in</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
 @endsection

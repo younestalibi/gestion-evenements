@@ -43,7 +43,7 @@
     <div class="side_menu">
         <div class="logo">
             <a href="{{route('home')}}">
-                <img src="{{asset('newAssets/img/morocco.png')}}" alt="" style="width: 200px; height: auto;">
+                <img src="{{asset('assets/morocco.png')}}" alt="" style="width: 200px; height: auto;">
             </a>
         </div>
         <ul class="list menu-left">
@@ -99,7 +99,7 @@
     <section class="top-btn-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" >
                     @guest
                     <a href="{{ route('login') }}" class="main_btn">
                         Jion Us
@@ -107,55 +107,85 @@
                     </a>
                     @endguest
                     @auth
-                    <div class="dropdown dropdown-avatar" style="z-index: 12;">
-                        <button class="dropdown-toggle button-avatar" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="avatar">
-                                <div class="mx-4">{{Auth::user()->name}}</div>
-                                @if (Auth::user()->Profile->img_path == null)
-                                <img width="30" src="{{ asset('users/profile/1.png') }}" alt="profile" class="w-px-40 h-auto rounded-circle img-fluid" />
-                                @else
-                                <img width="30" src="{{ asset('users/profile/' . Auth::user()->Profile->img_path) }}" alt="profile" class="w-px-40 h-auto img-fluid rounded-circle" />
-                                @endif
-                            </div>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">
-                                <div class="d-flex justify-content-between">
-                                    <div class="avatar">
-                                        <img width='27' src="{{ asset('users/profile/1.png') }}" alt="">
-                                    </div>
-                                    <div>
-                                        <div>{{Auth::user()->name}}</div>
-                                        <div>{{Auth::user()->email}}</div>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr>
-                            <a class="dropdown-item" href="{{ route('profile.index') }}">
-                                <i class="bx bx-user me-2"></i>
-                                <span class="align-middle">My Profile</span>
-                            </a>
-                            @if (Auth::user()->role == 'Administrator')
-                            <a class="dropdown-item" href="{{ route('admin.index') }}">
-                                <i class="fa fa-slider me-2" aria-hidden="true"></i>
-                                <span class="align-middle">Dashboard</span>
-                            </a>
-                            @elseif (Auth::user()->role == 'Partner')
-                            <a class="dropdown-item" href="{{ route('partner.index') }}">
-                                <i class="fa fa-slider me-2" aria-hidden="true"></i>
-                                <span class="align-middle">Dashboard</span>
-                            </a>
-                            @endif
+                    <div class="navbar-nav-right d-flex align-items-center justify-content-end" style="width:100px;margin-left:auto;z-index:44;position:sticky" id="navbar-collapse">
 
-                            <hr>
-                            <form action="{{ route('logout') }}" method="post">
-                                @csrf
-                                <button type="submit" class="dropdown-item">
-                                    <i class="bx bx-power-off me-2"></i>
-                                    <span class="align-middle">Log Out</span>
-                                </button>
-                            </form>
-                        </div>
+                        <ul class="navbar-nav text-dark flex-row align-items-center ms-auto ">
+                            <!-- Guest -->
+                            @guest
+                            <li class="nav-item lh-1 me-3">
+                                <a class="nav-link" href="{{ route('login') }}">Join Us</a>
+                            </li>
+                            @endguest
+                            <!-- Auth -->
+                            @auth
+                            
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                    <div class="avatar avatar-online">
+                                        <span class="mx-3 text-dark">{{ Auth::user()->name }}</span>
+                                        @if (Auth::user()->Profile->img_path == null)
+                                        <img src="{{ asset('users/profile/1.png') }}" alt="profile" class="w-px-40 h-auto rounded-circle img-fluid" />
+                                        @else
+                                        <img src="{{ asset('users/profile/' . Auth::user()->Profile->img_path) }}" alt="profile" class="w-px-40 h-auto img-fluid rounded-circle" />
+                                        @endif
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar avatar-online">
+                                                        @if (Auth::user()->Profile->img_path == null)
+                                                        <img src="{{ asset('users/profile/1.png') }}" alt="profile" class="w-px-40 h-auto rounded-circle img-fluid" />
+                                                        @else
+                                                        <img src="{{ asset('users/profile/' . Auth::user()->Profile->img_path) }}" alt="profile" class="w-px-40 h-auto img-fluid rounded-circle" />
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <span class="fw-semibold d-block">{{ Auth::user()->name }}</span>
+                                                    <small class="">{{ Auth::user()->email }}</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('profile.index') }}">
+                                        <i class="bi bi-person me-2"></i>
+                                            <span class="align-middle">My Profile</span>
+                                        </a>
+                                        @if (Auth::user()->role == 'Administrator')
+                                        <a class="dropdown-item" href="{{ route('admin.index') }}">
+                                            <i class="fa fa-sliders me-2" aria-hidden="true"></i>
+                                            <span class="align-middle">Dashboard</span>
+                                        </a>
+                                        @elseif (Auth::user()->role == 'Partner')
+                                        <a class="dropdown-item" href="{{ route('partner.index') }}">
+                                            <i class="fa fa-sliders me-2" aria-hidden="true"></i>
+                                            <span class="align-middle">Dashboard</span>
+                                        </a>
+                                        @endif
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider"></div>
+                                    </li>
+                                    <li>
+                                        <form action="{{ route('logout') }}" method="post">
+                                            @csrf
+                                            <button type="submit" class="dropdown-item">
+                                                <i class="bx bx-power-off me-2"></i>
+                                                <span class="align-middle">Log Out</span>
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                            @endauth
+                        </ul>
                     </div>
                     @endauth
                 </div>
@@ -231,6 +261,8 @@
     <script src="{{asset('newAssets/vendors/scroll/jquery.mCustomScrollbar.js')}}"></script>
     <script src="{{asset('newAssets/js/theme.js')}}"></script>
     <script src="{{asset('newAssets/js/index.js')}}"></script>
+
+    <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
 
 </body>
 

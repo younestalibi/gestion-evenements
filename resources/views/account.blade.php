@@ -28,7 +28,7 @@
                                             class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
                                     @endif
                                     <div class="button-wrapper">
-                                        <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                        <label for="upload" class="btn btn-warning me-2 mb-4" tabindex="0">
                                             <span class="d-none d-sm-block">Upload new photo</span>
                                             <i class="bx bx-upload d-block d-sm-none"></i>
                                             <input type="file" id="upload" name="img_path" class="account-file-input" hidden

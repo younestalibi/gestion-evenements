@@ -115,7 +115,7 @@ Edit Service
                                             <img src="{{ asset('users/services/'.$service->image) }}" alt="user-avatar" class="d-block rounded img-fluid" id="uploadedAvatar" />
                                         </div>
                                         <div class="button-wrapper">
-                                            <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
+                                            <label for="upload" class="btn btn-warning me-2 mb-4" tabindex="0">
                                                 <span class="d-none d-sm-block">Upload new photo</span>
                                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                                 <input type="file" id="upload" name="image" class="account-file-input @error('image') is-invalid @enderror" hidden accept="image/png, image/jpeg" />
