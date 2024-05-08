@@ -2,11 +2,19 @@
 @section('content')
 
 <section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center">
+    <div class="container ">
+        <div class="row justify-content-center ">
             <div class="col-md-12 col-lg-10">
-                <div class="wrap d-md-flex">
-                    <div class="img" style="background-image: url({{asset('newAssets/img/pac1.jpg')}});">
+                <div class="wrap d-md-flex align-items-center p-5">
+                    <div class="img d-flex justify-center align-items-center flex-column">
+                        <img src="{{asset('assets/morocco.png')}}" alt="" style="width: 100%;object-fit:cover">
+                        <div class="text-center">
+                            <p>Welcome to MoroccoInYourHand!</p>
+                            <p>Your ultimate guide to discovering the wonders of Morocco</p>
+                            <p>Explore breathtaking destinations, plan your trip with precision, and enjoy</p>
+                            <p>major events.</p>
+                            <p>Create an account today and start exploring!</p>
+                        </div>
                     </div>
                     <div class="login-wrap p-4 p-md-5">
                         <div class="d-flex">
@@ -49,7 +57,7 @@
 
                             </div>
                         </form>
-                        <p class="text-center">Not a member? <a  href="{{ route('register') }}">Sign Up</a></p>
+                        <p class="text-center">Not a member? <a href="{{ route('register') }}">Sign Up</a></p>
                     </div>
                 </div>
             </div>

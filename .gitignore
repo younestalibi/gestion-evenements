@@ -18,7 +18,4 @@ yarn-error.log
 /.idea
 /.vscode
 
-/public/users
-!/public/users/default.png
-!/public/users/profile/1.png
 

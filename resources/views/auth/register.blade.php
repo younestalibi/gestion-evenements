@@ -5,8 +5,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
-                <div class="wrap d-md-flex">
-                    <div class="img" style="background-image: url({{asset('newAssets/img/pac1.jpg')}});">
+                <div class="wrap d-md-flex align-items-center p-5">
+                    <div class="img d-flex justify-center align-items-center flex-column">
+                        <img src="{{asset('assets/morocco.png')}}" alt="" style="width: 100%;object-fit:cover">
+                        <div class="text-center">
+                            <p>Welcome to MoroccoInYourHand!</p>
+                            <p>Your ultimate guide to discovering the wonders of Morocco</p>
+                            <p>Explore breathtaking destinations, plan your trip with precision, and enjoy</p>
+                            <p>major events.</p>
+                            <p>Create an account today and start exploring!</p>
+                        </div>
                     </div>
                     <div class="login-wrap p-4 p-md-5">
                         <div class="d-flex">
@@ -38,7 +46,7 @@
                                 <label for="role" class="form-label">User Type</label>
                                 <select id="role" name="role" class="form-control @error('role') is-invalid @enderror">
                                     <option value="">--Select user type--</option>
-                                    <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Customer</option>
+                                    <option value="Customer" {{ old('role') == 'Customer' ? 'selected' : '' }}>Visitor</option>
                                     <option value="Partner" {{ old('role') == 'Partner' ? 'selected' : '' }}>Partner</option>
                                 </select>
                                 @error('role')
