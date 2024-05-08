@@ -5,7 +5,7 @@
         position: absolute;
         top: 22px;
         z-index: 1;
-        left: 21px;
+        left: 321px;
     }
 </style>
 <div class="div p-5">
@@ -152,3 +152,7 @@
 @endif
 
 @endsection
+<script>
+    toastr.error("hi");
+    alert('hi')
+</script>

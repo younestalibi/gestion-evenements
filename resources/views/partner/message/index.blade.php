@@ -39,7 +39,6 @@ All Messages
                                 $count = 1;
                                 @endphp
                                 @foreach ($messages as $message)
-                                @if(!is_null($message->service))
                                 <tr>
                                     <td>{{ $count++ }}</td>
                                     <td>{{ $message->name }}</td>
@@ -57,7 +56,6 @@ All Messages
                                         </a>
                                     </td>
                                 </tr>
-                                @endif
                                 @endforeach
                             </tbody>
                             @endif

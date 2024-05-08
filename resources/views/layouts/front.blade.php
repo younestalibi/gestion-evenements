@@ -31,7 +31,7 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- Bootstrap Icons CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
 
 
 
@@ -99,7 +99,7 @@
     <section class="top-btn-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12" >
+                <div class="col-lg-12">
                     @guest
                     <a href="{{ route('login') }}" class="main_btn">
                         Jion Us
@@ -118,7 +118,7 @@
                             @endguest
                             <!-- Auth -->
                             @auth
-                            
+
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                     <div class="avatar avatar-online">
@@ -155,7 +155,7 @@
                                     </li>
                                     <li>
                                         <a class="dropdown-item" href="{{ route('profile.index') }}">
-                                        <i class="bi bi-person me-2"></i>
+                                            <i class="bi bi-person me-2"></i>
                                             <span class="align-middle">My Profile</span>
                                         </a>
                                         @if (Auth::user()->role == 'Administrator')
@@ -263,6 +263,7 @@
     <script src="{{asset('newAssets/js/index.js')}}"></script>
 
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
 
 </body>
 

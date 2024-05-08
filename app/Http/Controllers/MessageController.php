@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
     public function adminMessages(){
-        $messages = Message::where('user_id', Auth::user()->id)
+        $messages = Message::where('user_id', Auth::user()->id)->has('event')
         ->with('event') 
         ->paginate(6);
         $myProfile = User::find(Auth::user()->id)->Profile;
@@ -18,9 +18,9 @@ class MessageController extends Controller
     }
     public function partnerMessages(){
         
-        $messages = Message::where('user_id', Auth::user()->id)
+        $messages = Message::where('user_id', Auth::user()->id)->has('service')
         ->with('service')->paginate(6);
- 
+
         $myProfile = User::find(Auth::user()->id)->Profile;
         return view('partner.message.index', compact('myProfile', 'messages'));
     }

@@ -111,6 +111,7 @@
             $(document).on('click', '.btnDeleteCar', function(e) {
                 e.preventDefault();
                 var id = this.id;  
+                
 
                 Swal.fire({
                     title: 'Are you sure?',

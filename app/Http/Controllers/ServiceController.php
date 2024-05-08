@@ -134,9 +134,13 @@ class ServiceController extends Controller
                 unlink($previousImagePath);
             }
         }
-        $service->delete();
+        if($service){
+            $service->delete();
+        }
         $message = Message::where('user_id',Auth::user()->id)->where('item_id',$service->id)->first();
-        $message->delete();
+        if($message){
+            $message->delete();
+        }
 
         return response()->json([
             'status' => true,

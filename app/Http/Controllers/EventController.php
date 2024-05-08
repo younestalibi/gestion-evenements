@@ -108,10 +108,14 @@ class EventController extends Controller
                 unlink($previousPicturePath);
             }
         }
-        $event->delete();
+        if($event){
+            $event->delete();
+        }
 
         $message = Message::where('user_id',Auth::user()->id)->where('item_id',$event->id)->first();
-        $message->delete();
+        if($message){
+            $message->delete();
+        }
         
         return response()->json([
             'status' => true,
