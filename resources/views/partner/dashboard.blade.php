@@ -7,7 +7,7 @@ Dashboard
 
 <div class="row">
     <div class="col-12">
-        <h1 class="display-1 font-monospace">Informations</h1>
+        <h1 class="display-1 font-monospace">OverView</h1>
     </div>
 
     <div class="col-lg-12 col-md-12 mb-4">
@@ -19,6 +19,19 @@ Dashboard
                 
                 <h3 class="card-title  fw-semibold mb-2">
                     {{ $CountServices }}
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 mb-4">
+        <div class="card shadow-lg rounded">
+            <div class="card-body">
+                <div class="card-header font-monospace fs-3 px-0">
+                    Total Messages
+                </div>
+                
+                <h3 class="card-title  fw-semibold mb-2">
+                    {{ $CountMessages }}
                 </h3>
             </div>
         </div>
