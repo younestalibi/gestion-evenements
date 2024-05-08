@@ -61,7 +61,6 @@ Create Destination
                                     @enderror
                                 </div>
                             </div>
-                            
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 mb-3 d-flex justify-content-start align-items-center gap-4">
                                     <div class="col-5">
@@ -69,7 +68,7 @@ Create Destination
                                     </div>
                                     <div class="button-wrapper">
                                         <label for="upload" class="btn btn-warning me-2 mb-4" tabindex="0">
-                                            <span class="d-none d-sm-block">Upload new photo</span>
+                                            <span class="d-none d-sm-block">Upload new photo.</span>
                                             <i class="bx bx-upload d-block d-sm-none"></i>
                                             <input type="file" id="upload" name="image" class="account-file-input @error('image') is-invalid @enderror" hidden accept="image/png, image/jpeg" />
                                         </label>
