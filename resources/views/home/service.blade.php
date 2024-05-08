@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 mb-3">
                         <label class="form-label" for="basic-default-name">Full Name</label>
-                        <input type="text" class="form-control @error('name') is-invalid @enderror " value="{{old('name')}}" id="name" name="name" placeholder="Full Name">
+                        <input type="text" class="form-control @error('name') @enderror " value="{{old('name')}}" id="name" name="name" placeholder="Full Name">
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

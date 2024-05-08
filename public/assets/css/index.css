@@ -12,36 +12,61 @@
     cursor: pointer; /* Keep the cursor as pointer */
     display: inline-block; /* Ensure button is inline-block */
 }
-.avatar{
+.avatar {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.avatar img{
-    width:45px !important;
-    border-radius:50%;
-    height:45px !important;
-    object-fit:cover;
+.avatar img {
+    width: 45px !important;
+    border-radius: 50%;
+    height: 45px !important;
+    object-fit: cover;
 }
-.dropdown-item .avatar img{
-    margin-right:15px
+.dropdown-item .avatar img {
+    margin-right: 15px;
 }
-.dropdown-avatar{
+.dropdown-avatar {
     margin-left: auto;
     width: 50%;
 }
-.dropdown-toggle::after{
-    border:0px
+.dropdown-toggle::after {
+    border: 0px;
 }
-.single-amenities{
-    height:100%;
+.single-amenities {
+    height: 100%;
 }
-.single-amenities .img-fluid{
-    height:220px;
-    object-fit:cover;
-    width:100%;
+.single-amenities .img-fluid {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
 }
-.dropdown-menu-end{
-    width:220px !important;
+.dropdown-menu-end {
+    width: 220px !important;
 }
 
+.form-control {
+    height: 48px;
+    background: #fff;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus,
+.form-control:active {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #e3b04b;
+}
+
+.btn{
+    background: #e3b04b !important;
+    border: 1px solid #e3b04b !important;
+    color: #fff !important;
+    width:100% !important
+}

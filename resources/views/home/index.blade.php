@@ -23,7 +23,7 @@
 					<img class="img-fluid w-100" src="{{asset('newAssets/img/téléchargement (4).jpg')}}" alt="">
 				</div>
 				<div class="video-popup d-flex align-items-center">
-					<a class="play-video video-play-button animate" href="https://www.youtube.com/watch?v=KUln2DXU5VE" data-animate="zoomIn" data-duration="1.5s" data-delay="0.1s">
+					<a class=" video-play-button " href="https://www.youtube.com/watch?v=OycYHUdAWfQ&t=18s" target="_blank">
 						<span></span>
 					</a>
 					<div class="watch">
