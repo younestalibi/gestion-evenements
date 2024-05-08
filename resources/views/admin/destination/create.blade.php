@@ -64,7 +64,7 @@ Create Destination
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 mb-3 d-flex justify-content-start align-items-center gap-4">
                                     <div class="col-5">
-                                        <img src="{{ asset('users/default.png') }}" alt="user-avatar" class="d-block rounded img-fluid" id="uploadedAvatar" />
+                                        <img src="{{ asset('users/default.png') }}" alt="user-avatar " class="d-block rounded img-fluid" id="uploadedAvatar" />
                                     </div>
                                     <div class="button-wrapper">
                                         <label for="upload" class="btn btn-warning me-2 mb-4" tabindex="0">
